@@ -23,16 +23,21 @@ h1 {
     color: #E0E0E0; /* روشن‌تر کردن عنوان */
     font-size: 1.5em; /* کمی بزرگتر کردن عنوان */
 }
-.search-bar {
+.controls-bar { /* ایجاد یک نوار کنترلی برای دکمه‌ها و جستجو */
+    display: flex;
+    flex-wrap: wrap; /* برای قرار گرفتن عناصر در خطوط بعدی در صورت کمبود فضا */
+    gap: 10px;
     margin-bottom: 20px; /* افزایش margin */
-    box-sizing: border-box;
+    align-items: center; /* تراز عمودی عناصر */
+}
+.search-bar {
     display: flex;
     gap: 10px;
     align-items: center;
+    flex-grow: 1; /* به نوار جستجو اجازه می‌دهد فضای بیشتری بگیرد */
 }
 .search-bar input[type="text"],
 .search-bar select {
-    flex-grow: 1;
     padding: 10px; /* افزایش padding */
     border: 1px solid #4A4B4E; /* حاشیه تیره‌تر */
     border-radius: 4px;
@@ -40,40 +45,37 @@ h1 {
     color: #D1D1D1;
     box-sizing: border-box;
     font-size: 1em; /* کمی بزرگتر کردن فونت */
+    height: 40px; /* تنظیم ارتفاع یکسان */
 }
 .search-bar button,
-.add-button {
+.add-button,
+.search-bar a {
     padding: 10px 15px; /* افزایش padding */
     border: none;
     border-radius: 4px;
     background-color: #007bff;
     color: white;
     text-decoration: none;
-    margin-bottom: 10px; /* برای add-button */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* اضافه کردن transition برای سایه */
     box-sizing: border-box;
     font-size: 1em;
     cursor: pointer;
+    height: 40px; /* تنظیم ارتفاع یکسان */
+    display: inline-flex; /* برای تراز عمودی آیکون یا متن در صورت نیاز */
+    align-items: center;
+    justify-content: center;
 }
-.search-bar button:hover,
-.add-button:hover {
-    background-color: #0056b3;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* اضافه کردن سایه در حالت hover */
+.add-button {
+    background-color: #5cb85c; /* تغییر رنگ دکمه افزودن */
 }
 .search-bar a {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
     background-color: #6c757d;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 1em;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+.search-bar button:hover,
+.add-button:hover,
 .search-bar a:hover {
-    background-color: #5a6268;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #0056b3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* اضافه کردن سایه در حالت hover */
 }
 table {
     width: 100%;
@@ -130,19 +132,18 @@ tr:hover {
         font-size: 1.8em;
         margin-bottom: 15px;
     }
+    .controls-bar {
+        flex-direction: column; /* چیدن عناصر زیر هم در موبایل */
+    }
     .search-bar {
         flex-direction: column; /* چیدن عناصر زیر هم در موبایل */
     }
     .search-bar input[type="text"],
     .search-bar select,
     .search-bar button,
-    .search-bar a {
-        width: 100%;
-        margin-bottom: 10px;
-    }
+    .search-bar a,
     .add-button {
-        font-size: 0.9em;
-        padding: 8px 12px;
+        width: 100%;
         margin-bottom: 10px;
     }
     table {
@@ -161,4 +162,4 @@ tr:hover {
         margin-left: 3px;
         font-size: 0.8em;
     }
-}
+    }
