@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #222;
-    color: #eee;
+    background-color: #36373A; /* خاکستری تیره ملایم */
+    color: #D1D1D1; /* خاکستری روشن */
     margin: 0;
     padding: 10px;
     direction: rtl;
@@ -10,128 +10,155 @@ body {
 .container {
     max-width: 960px;
     margin: 0 auto;
-    background-color: #333;
-    padding: 10px;
+    background-color: #27282C; /* خاکستری تیره‌تر برای کانتینر */
+    padding: 20px; /* افزایش padding برای فضای بیشتر */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
-    overflow-x: auto; /* اضافه شد: فعال کردن اسکرول افقی برای کانتینر در صورت نیاز */
+    overflow-x: auto;
 }
 h1 {
     text-align: center;
-    margin-bottom: 15px;
-    color: #ddd;
-    font-size: 1.3em;
+    margin-bottom: 20px; /* افزایش margin */
+    color: #E0E0E0; /* روشن‌تر کردن عنوان */
+    font-size: 1.5em; /* کمی بزرگتر کردن عنوان */
 }
 .search-bar {
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* افزایش margin */
     box-sizing: border-box;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
-.search-bar input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #555;
+.search-bar input[type="text"],
+.search-bar select {
+    flex-grow: 1;
+    padding: 10px; /* افزایش padding */
+    border: 1px solid #4A4B4E; /* حاشیه تیره‌تر */
     border-radius: 4px;
-    background-color: #444;
-    color: #eee;
+    background-color: #3C3D3F; /* پس‌زمینه روشن‌تر برای فیلد و select */
+    color: #D1D1D1;
     box-sizing: border-box;
-    font-size: 0.9em;
+    font-size: 1em; /* کمی بزرگتر کردن فونت */
 }
+.search-bar button,
 .add-button {
-    display: block;
-    width: fit-content;
-    padding: 8px 10px;
+    padding: 10px 15px; /* افزایش padding */
     border: none;
     border-radius: 4px;
     background-color: #007bff;
     color: white;
     text-decoration: none;
-    margin-bottom: 15px;
-    transition: background-color 0.3s ease;
+    margin-bottom: 10px; /* برای add-button */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* اضافه کردن transition برای سایه */
     box-sizing: border-box;
-    font-size: 0.9em;
+    font-size: 1em;
+    cursor: pointer;
 }
+.search-bar button:hover,
 .add-button:hover {
     background-color: #0056b3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* اضافه کردن سایه در حالت hover */
+}
+.search-bar a {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #6c757d;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.search-bar a:hover {
+    background-color: #5a6268;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* افزایش margin */
     box-sizing: border-box;
-    min-width: 600px; /* حداقل عرض جدول را تعیین کنید */
+    min-width: 700px; /* افزایش حداقل عرض */
 }
 th, td {
-    padding: 6px;
-    border-bottom: 1px solid #555;
+    padding: 8px; /* افزایش padding */
+    border-bottom: 1px solid #4A4B4E; /* خط جداکننده تیره‌تر */
     text-align: right;
     box-sizing: border-box;
-    font-size: 0.85em;
+    font-size: 0.9em;
 }
 th {
-    background-color: #444;
-    color: #ccc;
+    background-color: #3C3D3F; /* پس‌زمینه تیره‌تر برای سربرگ‌ها */
+    color: #E0E0E0;
     cursor: pointer;
 }
 tr:nth-child(even) {
-    background-color: #444;
+    background-color: #36373A; /* پس‌زمینه کمی تیره‌تر برای ردیف‌های زوج */
 }
 tr:hover {
-    background-color: #555;
+    background-color: #4A4B4E; /* hover تیره‌تر */
 }
 .asset-image {
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 40px; /* کمی بزرگتر کردن تصویر */
+    max-height: 40px;
     vertical-align: middle;
+    border-radius: 4px; /* گرد کردن گوشه‌های تصویر */
     box-sizing: border-box;
 }
 .actions a {
     color: #5cb85c;
     text-decoration: none;
-    margin-left: 3px;
-    font-size: 0.8em;
+    margin-left: 5px; /* افزایش margin */
+    font-size: 0.9em;
+    transition: color 0.3s ease;
     box-sizing: border-box;
 }
 .actions a:hover {
     text-decoration: underline;
+    color: #77dd77; /* رنگ hover روشن‌تر */
 }
 
 /* Media Query برای دستگاه های با عرض حداکثر 600 پیکسل */
 @media (max-width: 600px) {
     .container {
-        padding: 10px;
-        overflow-x: auto; /* فعال کردن اسکرول افقی برای کانتینر در موبایل */
+        padding: 15px;
+        overflow-x: auto;
     }
     h1 {
-        font-size: 1.7em;
-        margin-bottom: 10px;
+        font-size: 1.8em;
+        margin-bottom: 15px;
     }
-    .search-bar input[type="text"] {
-        font-size: 0.85em;
-        padding: 6px;
+    .search-bar {
+        flex-direction: column; /* چیدن عناصر زیر هم در موبایل */
+    }
+    .search-bar input[type="text"],
+    .search-bar select,
+    .search-bar button,
+    .search-bar a {
+        width: 100%;
+        margin-bottom: 10px;
     }
     .add-button {
-        font-size: 0.85em;
-        padding: 6px 8px;
+        font-size: 0.9em;
+        padding: 8px 12px;
         margin-bottom: 10px;
     }
-    .table-responsive {
-        overflow-x: auto; /* فعال کردن اسکرول افقی برای جدول */
-    }
     table {
-        min-width: 700px; /* افزایش حداقل عرض برای جلوگیری از شکستگی نامناسب */
+        min-width: 600px; /* حفظ حداقل عرض */
     }
     th, td {
-        padding: 4px;
-        font-size: 1em;
-        white-space: nowrap; /* جلوگیری از شکستن خط در سلول ها */
+        padding: 6px;
+        font-size: 0.85em;
+        white-space: nowrap;
     }
     .asset-image {
-        max-width: 25px;
-        max-height: 25px;
+        max-width: 30px;
+        max-height: 30px;
     }
     .actions a {
-        margin-left: 2px;
-        font-size: 0.7em;
+        margin-left: 3px;
+        font-size: 0.8em;
     }
 }
